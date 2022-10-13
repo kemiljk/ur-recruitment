@@ -1,26 +1,55 @@
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "modern_erabold";
+  src: url("../public/fonts/modernera-bold-webfont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+@font-face {
+  font-family: "modern_eraregular";
+  src: url("../public/fonts/modernera-regular-webfont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
 }
 
-* {
-  box-sizing: border-box;
+@media (prefers-color-scheme: light) {
+  :root {
+    --primary-bg: #ffffff;
+    --secondary-bg: #ebf3f5;
+    --secondary-bg-correct: #f1fcf1;
+    --primary-text: #006179;
+    --secondary-text-action: #00c2b5;
+    --primary-border: #d9e7eb;
+  }
 }
 
 @media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+  :root {
+    --primary-bg: #001d24;
+    --secondary-bg: #003845;
+    --secondary-bg-correct: #0a3c2a;
+    --primary-text: #ffffff;
+    --secondary-text-action: #00c2b5;
+    --primary-border: #006179;
   }
+}
+
+@layer base {
   body {
-    color: white;
-    background: black;
+    font-family: "modern_eraregular";
+    background-color: var(--primary-bg);
+  }
+
+  p {
+    @apply leading-relaxed text-base font-normal mt-4;
+    color: var(--primary-text);
+  }
+
+  a {
+    color: var(--secondary-text-action);
   }
 }
