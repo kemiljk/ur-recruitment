@@ -78,7 +78,7 @@ export default function Home({ customer }) {
               A computer, laptop or mobile phone with a functioning microphone
               🎤
             </li>
-            <li>A quiet and private location</li>
+            <li>A quiet and private location 🤫</li>
           </ul>
         </p>
         <p>
